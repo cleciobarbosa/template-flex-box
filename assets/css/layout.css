@@ -43,12 +43,6 @@ header, nav, main, aside, footer {
 
 	/* Margem externa de todos os lados. */
 	margin: 3px;
-
-	/* Junção de flex-grow, flex-shrink e flex-basis.  */
-	/* flex-grow – Habilidade de um flex item crescer. */
-	/* flex-shrink - Capacidade de redução do item.    */
-	/* flex-basis – Tamanho inicial do item.           */
-	flex: 1 1 100vw;
 }
 
 /* Seletores para formatação individual. */
@@ -56,6 +50,12 @@ header, nav, main, aside, footer {
 header {
 	/* Altura do elemento. */
 	height: 100px;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
 }
 
 header #logo {
@@ -111,30 +111,53 @@ nav {
 	/* Alinha os itens na horizontal. */
 	align-items: center;
 
-	/* Altura do elemento. */
-	height: 100px;
+	/* Dispõe os itens em coluna. */
+	flex-direction: column;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
 }
 
 nav a {
 	/* Margem de todos os lados. */
 	margin: 3%;
+
+	/* Tamanho da fonte. */
 	font-size: 15pt;
 }
 
 main {
 	/* Realizar a subtração de 100% da altura vertical menos a soma    */
 	/* da altura dos elementos ( 400px ) com as suas margens ( 36px ). */
-	height: calc(100vh - 436px);
+	height: calc(100vh - 224px);
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 20 1 500px;
 }
 
 aside {
-	/* Altura do elemento. */
-	height: 100px;
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 200px;
 }
 
 footer {
 	/* Altura do elemento. */
 	height: 100px;
+
+	/* Junção de flex-grow, flex-shrink e flex-basis.  */
+	/* flex-grow – Habilidade de um flex item crescer. */
+	/* flex-shrink - Capacidade de redução do item.    */
+	/* flex-basis – Tamanho inicial do item.           */
+	flex: 1 1 100vw;
 }
 
 a {
@@ -143,6 +166,19 @@ a {
 
 	/* Definir a cor da fonte para o padrão do elemento pai. */
 	color: inherit;
+}
+
+@media only screen and (max-width: 923px) {
+	main {
+		/* Realizar a subtração de 100% da altura vertical menos a soma    */
+		/* da altura dos elementos ( 300px ) com as suas margens ( 30px ). */
+		height: calc(100vh - 330px);
+	}
+
+	aside {
+		/* Altura do elemento. */
+		height: 100px;
+	}
 }
 
 /* Altera o estilo dos elementos para serem apresentados */ 
@@ -174,9 +210,6 @@ a {
 		/* Torna a posição do elemento fixa. */
 		position: fixed;
 
-		/* Dispõe os itens em coluna. */
-		flex-direction: column;
-
 		/* Ocupa 100% da largura da tela de exibição. */
 		width: 100vw;
 
@@ -186,11 +219,11 @@ a {
 		/* Cor em RGB, mais transparência. */
 		background: rgba(255, 255, 255, 0.8);
 
-		/* Alinha os itens na vertical. */
-		justify-content: center;
-
 		/* Alinha os itens na horizontal. */
 		align-items: center;
+
+		/* Alinha os itens na vertical. */
+		justify-content: center;
 
 		/* Remove a margem externa de todos os lados do elemento. */
 		margin: 0;
@@ -203,11 +236,5 @@ a {
 
 		/* Velocidade de transição de um estado para outro. */
 		transition: 0.3s;
-	}
-
-	main {
-		/* Realizar a subtração de 100% da altura vertical menos a soma    */
-		/* da altura dos elementos ( 300px ) com as suas margens ( 30px ). */
-		height: calc(100vh - 330px);
 	}
 }
